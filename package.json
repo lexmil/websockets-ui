@@ -6,16 +6,29 @@
     "type": "module",
     "scripts": {
         "start": "node ./index.js",
-        "start:dev": "nodemon ./index.js",
+        "start:dev": "nodemon --exec \"node --loader ts-node/esm\" tsconfig-paths/register ./index.ts",
+        "start:ws": "nodemon --exec \"node --loader ts-node/esm\" ./src/ws_server/index.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Andrei Auchynnikau",
     "keywords": [],
     "license": "ISC",
     "devDependencies": {
-        "nodemon": "^2.0.16"
+        "@types/node": "^22.15.19",
+        "@types/ws": "^8.18.1",
+        "cross-env": "^7.0.3",
+        "eslint": "^9.27.0",
+        "nodemon": "^2.0.16",
+        "prettier": "^3.5.3",
+        "ts-node": "^10.9.2",
+        "ts-node-dev": "^2.0.0",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3",
+        "webpack": "^5.99.8"
     },
     "dependencies": {
-        "ws": "^8.8.0"
+        "dotenv": "^16.5.0",
+        "tsconfig-paths": "^4.2.0",
+        "ws": "^8.18.2"
     }
 }
